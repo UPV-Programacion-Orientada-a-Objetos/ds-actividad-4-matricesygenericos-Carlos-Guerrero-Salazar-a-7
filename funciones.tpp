@@ -101,13 +101,12 @@ template <typename T>
 T Campo2D<T>::calcularGradientePromedio(int inicioF, int finF, int inicioC, int finC) {
     if (inicioF < 0 || finF > _filas || inicioC < 0 || finC > _columnas || inicioF >= finF || inicioC >= finC) {
         return T();
-#include <iostream>
     }
     T suma = T();
     int contador = 0;
     for (int i = inicioF; i < finF; ++i) {
         for (int j = inicioC; j < finC; ++j) {
-            // derecha
+            // derecha  
             if (j + 1 < finC) {
                 T diferencia = _datos[i][j] - _datos[i][j + 1];
                 suma += (diferencia < 0) ? -diferencia : diferencia;
