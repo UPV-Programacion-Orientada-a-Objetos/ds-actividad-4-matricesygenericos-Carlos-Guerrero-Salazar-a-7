@@ -2,8 +2,6 @@
 #define FUNCIONES_TPP
 
 #include "campo2d.h"
-#include <iostream>
-#include <cmath>
 
 // Constructor
 template <typename T>
@@ -102,8 +100,8 @@ void Campo2D<T>::setValor(int f, int c, T valor) {
 template <typename T>
 T Campo2D<T>::calcularGradientePromedio(int inicioF, int finF, int inicioC, int finC) {
     if (inicioF < 0 || finF > _filas || inicioC < 0 || finC > _columnas || inicioF >= finF || inicioC >= finC) {
-        std::cerr << "Error: Región inválida" << std::endl;
         return T();
+#include <iostream>
     }
     T suma = T();
     int contador = 0;
